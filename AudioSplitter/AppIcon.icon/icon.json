@@ -1,97 +1,85 @@
 {
-  "fill-specializations" : [
+  "fill-specializations": [
     {
-      "value" : {
-        "automatic-gradient" : "srgb:1.00000,1.00000,1.00000,1.00000"
+      "value": {
+        "automatic-gradient": "extended-gray:0.97000,1.00000"
       }
     },
     {
-      "appearance" : "dark",
-      "value" : {
-        "automatic-gradient" : "extended-gray:0.08757,1.00000"
+      "appearance": "dark",
+      "value": {
+        "automatic-gradient": "extended-gray:0.09000,1.00000"
       }
     }
   ],
-  "groups" : [
+  "groups": [
     {
-      "blur-material" : null,
-      "layers" : [
+      "layers": [
         {
-          "fill-specializations" : [
+          "glass": false,
+          "image-name": "Slash.svg",
+          "name": "Slash"
+        },
+        {
+          "fill-specializations": [
             {
-              "appearance" : "dark",
-              "value" : {
-                "solid" : "srgb:1.00000,1.00000,1.00000,1.00000"
+              "value": {
+                "solid": "extended-gray:0.10000,1.00000"
               }
             },
             {
-              "appearance" : "tinted",
-              "value" : {
-                "solid" : "extended-srgb:0.00000,0.53333,1.00000,1.00000"
+              "appearance": "dark",
+              "value": {
+                "solid": "extended-gray:1.00000,1.00000"
               }
             }
           ],
-          "image-name" : "A.png",
-          "name" : "A"
+          "glass": true,
+          "image-name": "Top.svg",
+          "name": "Top"
         },
         {
-          "fill-specializations" : [
+          "fill-specializations": [
             {
-              "appearance" : "tinted",
-              "value" : {
-                "solid" : "srgb:0.00000,0.00000,0.00000,1.00000"
-              }
-            }
-          ],
-          "glass" : true,
-          "hidden" : false,
-          "image-name" : "B.png",
-          "name" : "B"
-        },
-        {
-          "fill-specializations" : [
-            {
-              "appearance" : "dark",
-              "value" : {
-                "solid" : "srgb:1.00000,0.14913,0.00000,1.00000"
+              "value": {
+                "solid": "extended-gray:0.10000,1.00000"
               }
             },
             {
-              "appearance" : "tinted",
-              "value" : {
-                "solid" : "extended-srgb:0.00000,0.53333,1.00000,1.00000"
+              "appearance": "dark",
+              "value": {
+                "solid": "extended-gray:1.00000,1.00000"
               }
             }
           ],
-          "glass" : true,
-          "image-name" : "C.png",
-          "name" : "C"
+          "glass": true,
+          "image-name": "Bottom.svg",
+          "name": "Bottom"
+        },
+        {
+          "glass": false,
+          "image-name": "Lines.svg",
+          "name": "Lines",
+          "opacity": 0.6
         }
       ],
-      "lighting" : "individual",
-      "position" : {
-        "scale" : 0.75,
-        "translation-in-points" : [
-          0,
-          0
-        ]
+      "lighting": "individual",
+      "shadow": {
+        "kind": "layer-color",
+        "opacity": 0.5
       },
-      "shadow" : {
-        "kind" : "layer-color",
-        "opacity" : 0.5
-      },
-      "specular" : true,
-      "translucency" : {
-        "enabled" : true,
-        "value" : 0.5
+      "specular": true,
+      "translucency": {
+        "enabled": false,
+        "value": 0.5
       }
     }
   ],
-  "supported-platforms" : {
-    "circles" : [
+  "supported-platforms": {
+    "circles": [
       "watchOS"
     ],
-    "squares" : [
+    "squares": [
       "iOS",
       "macOS"
     ]
