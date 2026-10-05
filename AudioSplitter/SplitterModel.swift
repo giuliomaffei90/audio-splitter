@@ -18,7 +18,7 @@ final class SplitterModel {
     var clips: [Clip] = []
     var fileName: String?
     var isLoading = false
-    var errorMessage: String?
+    var failure: Failure?
     var settings = SplitSettings() { didSet { if settings != oldValue { resplit() } } }
 
     private(set) var buffer: AVAudioPCMBuffer?
@@ -34,7 +34,7 @@ final class SplitterModel {
 
     func load(url: URL) async {
         isLoading = true
-        errorMessage = nil
+        failure = nil
         defer { isLoading = false }
         do {
             let analysis = try await Task.detached(priority: .userInitiated) {
@@ -53,7 +53,8 @@ final class SplitterModel {
             buffer = nil
             clips = []
             fileName = nil
-            errorMessage = (error as? SplitterError)?.text ?? error.localizedDescription
+            failure = Failure(title: "Impossibile aprire il file",
+                              message: (error as? SplitterError)?.text ?? error.localizedDescription)
         }
     }
 
@@ -135,11 +136,15 @@ final class SplitterModel {
     private var bitDepth = 24
 }
 
+/// Cosa mostrare nell'avviso: il titolo dice cosa non è riuscito, il messaggio perché.
+struct Failure {
+    var title: String
+    var message: String
+}
+
 enum SplitterError: Error {
     case empty
-    var text: String {
-        "Impossibile leggere l'audio: il file è vuoto o in un formato non supportato."
-    }
+    var text: String { "Il file è vuoto o in un formato non supportato." }
 }
 
 /// Lettura + inviluppo. Fuori dal main actor, gira in background.

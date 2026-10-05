@@ -1,7 +1,8 @@
 # Audio Splitter
 
 A macOS app that cuts one audio file into the separate sounds inside it, using the silences between
-them as the cut points. Drag a file onto the window and every non-silent stretch becomes its own clip:
+them as the cut points. Drag a file onto the window (or choose **File › Open…**, ⌘O) and every
+non-silent stretch becomes its own clip:
 audition them, drop the ones you don't want, export the rest as **WAV**.
 
 It was written for sample libraries — a single take holding twenty dice rolls, footsteps or door
@@ -30,7 +31,8 @@ the slider is set to.
 | Margin | 0.10 s | Silence kept at both ends of every clip. |
 | Minimum clip | 0.15 s | Clips shorter than this are thrown away — it removes clicks and breaths. |
 
-All four retune the split live, without re-reading the file: the envelope is already in memory, so
+The four sliders live in the options panel on the right of the window; the toolbar button or
+**View › Hide Options** (⌃⌘I) hides it. All four retune the split live, without re-reading the file: the envelope is already in memory, so
 dragging a slider re-cuts the whole thing as you drag. Clips you had deselected stay deselected.
 
 ## The clips
@@ -41,14 +43,16 @@ Each clip is a tile showing its waveform, its number and its length.
   blue as it plays, so the tile itself is the progress bar.
 - **Click the circle** in the corner to leave a clip out. Deselected tiles fade and their waveform
   goes grey.
-- **All** / **None** select and deselect every clip at once.
+- **All** / **None** in the toolbar (also in the Edit menu) select and deselect every clip at once.
+
+The window title is the file name; the subtitle counts the clips and how many are selected.
 
 Bar heights are normalised against the loudest peak in the whole file, not per clip, so a quiet clip
 looks quiet next to a loud one instead of being stretched to fill its tile.
 
 ## Exporting
 
-**Export** asks for a folder and writes only the selected clips, as `<source name> <n>.wav` —
+**Export…** (toolbar or **File › Export…**, ⌘E) asks for a folder and writes only the selected clips, as `<source name> <n>.wav` —
 `footsteps 1.wav`, `footsteps 2.wav`, and so on. Sample rate, channel count and bit depth are taken
 from the source file, so a 16-bit 48 kHz mono recording comes back out as 16-bit 48 kHz mono. The
 original file is never touched.
@@ -57,7 +61,8 @@ Anything AVFoundation can read can go in: WAV, AIFF, CAF, MP3, M4A, and more. Ou
 
 ## Requirements
 
-- macOS 14 or later
+- macOS 14 or later. On macOS 26 and later the toolbar and panels use Liquid Glass; earlier
+  versions get the standard look of their system, with the same controls.
 - Xcode 26 to build (`actool` compiles the Liquid Glass icon)
 
 ## Building
