@@ -98,7 +98,7 @@ struct ContentView: View {
                 }
             }
         }
-        .navigationTitle(model.fileName ?? "Nessun file")
+        .navigationTitle(model.fileName ?? String(localized: "Nessun file"))
         .navigationSubtitle(subtitle)
         .inspector(isPresented: $showsInspector) {
             SettingsForm(settings: $model.settings)
@@ -137,9 +137,9 @@ struct ContentView: View {
     // MARK: - Barra degli strumenti
 
     private var subtitle: String {
-        if model.isLoading { return "Analisi in corso…" }
+        if model.isLoading { return String(localized: "Analisi in corso…") }
         guard model.fileName != nil else { return "" }
-        return "\(model.clips.count) clip · \(model.selectedCount) selezionate"
+        return String(localized: "\(model.clips.count) clip · \(model.selectedCount) selezionate")
     }
 
     @ToolbarContentBuilder
@@ -202,7 +202,7 @@ struct ContentView: View {
                 NSWorkspace.shared.activateFileViewerSelecting([directory])
             }
         } catch {
-            model.failure = Failure(title: "Impossibile esportare le clip", message: error.localizedDescription)
+            model.failure = Failure(title: String(localized: "Impossibile esportare le clip"), message: error.localizedDescription)
         }
     }
 }
@@ -233,8 +233,8 @@ private struct SettingsForm: View {
         .formStyle(.grouped)
     }
 
-    private func knob(_ title: String, value: Binding<Double>, in range: ClosedRange<Double>,
-                      digits: Int, unit: String, help: String) -> some View {
+    private func knob(_ title: LocalizedStringKey, value: Binding<Double>, in range: ClosedRange<Double>,
+                      digits: Int, unit: String, help: LocalizedStringKey) -> some View {
         let text = "\(value.wrappedValue.formatted(.number.precision(.fractionLength(digits)))) \(unit)"
         return VStack(alignment: .leading, spacing: 4) {
             HStack {

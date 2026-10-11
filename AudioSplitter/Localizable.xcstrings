@@ -1,0 +1,418 @@
+{
+  "sourceLanguage": "it",
+  "strings": {
+    "%lld clip · %lld selezionate": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%#@clips@ · %2$lld selected"
+          },
+          "substitutions": {
+            "clips": {
+              "argNum": 1,
+              "formatSpecifier": "lld",
+              "variations": {
+                "plural": {
+                  "one": {
+                    "stringUnit": {
+                      "state": "translated",
+                      "value": "%arg clip"
+                    }
+                  },
+                  "other": {
+                    "stringUnit": {
+                      "state": "translated",
+                      "value": "%arg clips"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "Analisi in corso…": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Analyzing…"
+          }
+        }
+      }
+    },
+    "Apri": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Open"
+          }
+        }
+      }
+    },
+    "Apri…": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Open…"
+          }
+        }
+      }
+    },
+    "Clip minima": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Minimum Clip"
+          }
+        }
+      }
+    },
+    "Deseleziona tutte le clip": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Deselect All Clips"
+          }
+        }
+      }
+    },
+    "Divisione": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Split"
+          }
+        }
+      }
+    },
+    "Escludi la clip dall'esportazione": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Leave the clip out of the export"
+          }
+        }
+      }
+    },
+    "Esporta qui": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Export Here"
+          }
+        }
+      }
+    },
+    "Esporta…": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Export…"
+          }
+        }
+      }
+    },
+    "Ferma la clip %lld": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Stop clip %lld"
+          }
+        }
+      }
+    },
+    "Il file è vuoto o in un formato non supportato.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The file is empty or in an unsupported format."
+          }
+        }
+      }
+    },
+    "Il livello sotto cui il suono conta come silenzio.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The level under which sound counts as silence."
+          }
+        }
+      }
+    },
+    "Il silenzio lasciato ai due capi di ogni clip.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The silence kept at both ends of every clip."
+          }
+        }
+      }
+    },
+    "Impossibile aprire il file": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The file couldn’t be opened"
+          }
+        }
+      }
+    },
+    "Impossibile esportare le clip": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The clips couldn’t be exported"
+          }
+        }
+      }
+    },
+    "Includi la clip nell'esportazione": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Include the clip in the export"
+          }
+        }
+      }
+    },
+    "Includi nell'esportazione": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Include in export"
+          }
+        }
+      }
+    },
+    "Le clip più corte vengono scartate.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Shorter clips are discarded."
+          }
+        }
+      }
+    },
+    "Le clip si ricalcolano mentre muovi i cursori.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Clips are recalculated as you move the sliders."
+          }
+        }
+      }
+    },
+    "Margine": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Margin"
+          }
+        }
+      }
+    },
+    "Mostra le opzioni": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Show the options"
+          }
+        }
+      }
+    },
+    "Mostra opzioni": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Show Options"
+          }
+        }
+      }
+    },
+    "Nascondi le opzioni": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hide the options"
+          }
+        }
+      }
+    },
+    "Nascondi opzioni": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hide Options"
+          }
+        }
+      }
+    },
+    "Nessun file": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No File"
+          }
+        }
+      }
+    },
+    "Nessuna": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "None"
+          }
+        }
+      }
+    },
+    "Opzioni": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Options"
+          }
+        }
+      }
+    },
+    "Quanto deve durare un silenzio per dividere il file.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "How long a silence has to last to split the file."
+          }
+        }
+      }
+    },
+    "Riproduci la clip %lld": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Play clip %lld"
+          }
+        }
+      }
+    },
+    "Salva le clip selezionate come WAV": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Save the selected clips as WAV"
+          }
+        }
+      }
+    },
+    "Scegli dove salvare le clip selezionate.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Choose where to save the selected clips."
+          }
+        }
+      }
+    },
+    "Scegli un file…": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Choose a File…"
+          }
+        }
+      }
+    },
+    "Seleziona tutte le clip": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Select All Clips"
+          }
+        }
+      }
+    },
+    "Silenzio minimo": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Minimum Silence"
+          }
+        }
+      }
+    },
+    "Soglia": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Threshold"
+          }
+        }
+      }
+    },
+    "Trascina qui un file audio": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Drag an Audio File Here"
+          }
+        }
+      }
+    },
+    "Tutte": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "All"
+          }
+        }
+      }
+    },
+    "Viene diviso in clip usando i silenzi. WAV, AIFF, CAF, MP3, M4A.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "It’s split into clips using the silences. WAV, AIFF, CAF, MP3, M4A."
+          }
+        }
+      }
+    }
+  },
+  "version": "1.0"
+}

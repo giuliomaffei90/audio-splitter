@@ -53,7 +53,7 @@ final class SplitterModel {
             buffer = nil
             clips = []
             fileName = nil
-            failure = Failure(title: "Impossibile aprire il file",
+            failure = Failure(title: String(localized: "Impossibile aprire il file"),
                               message: (error as? SplitterError)?.text ?? error.localizedDescription)
         }
     }
@@ -144,7 +144,7 @@ struct Failure {
 
 enum SplitterError: Error {
     case empty
-    var text: String { "Il file è vuoto o in un formato non supportato." }
+    var text: String { String(localized: "Il file è vuoto o in un formato non supportato.") }
 }
 
 /// Lettura + inviluppo. Fuori dal main actor, gira in background.

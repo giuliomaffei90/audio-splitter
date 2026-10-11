@@ -18,31 +18,28 @@
 It was written for sample libraries — a single take holding twenty dice rolls, footsteps or door
 slams, that has to end up as twenty files.
 
-The interface is in Italian; the names below are the ones the app shows, with their meaning next to
-them.
-
 ## Features
 
-- **Open a file**: drag it onto the window, press **Scegli un file…** on the empty window, or choose
-  **File › Apri…** (⌘O). Every non-silent stretch becomes its own clip. Anything AVFoundation can
+- **Open a file**: drag it onto the window, press **Choose a File…** on the empty window, or choose
+  **File › Open…** (⌘O). Every non-silent stretch becomes its own clip. Anything AVFoundation can
   read can go in: WAV, AIFF, CAF, MP3, M4A, and more.
 - **Tune the split live**: four sliders in the options panel on the right of the window re-cut the
-  file as you drag, without re-reading it. The toolbar button or **View › Nascondi opzioni** (⌃⌘I)
+  file as you drag, without re-reading it. The toolbar button or **View › Hide Options** (⌃⌘I)
   hides the panel.
 - **Audition a clip**: each clip is a tile showing its waveform, its number and its length. Click
   the waveform to play the clip, click again to stop. The bars turn from light blue to deep blue as
   it plays, so the tile itself is the progress bar.
 - **Leave clips out**: click the circle in the corner of a tile. Deselected tiles fade and their
-  waveform goes grey. **Tutte** (all) / **Nessuna** (none) in the toolbar select and deselect every
-  clip at once; the Edit menu has the same two commands as **Seleziona tutte le clip** and
-  **Deseleziona tutte le clip**.
+  waveform goes grey. **All** / **None** in the toolbar select and deselect every clip at once; the Edit
+  menu has the same two commands as **Select All Clips** and **Deselect All Clips**.
 - **Keep count**: the window title is the file name; the subtitle counts the clips and how many are
   selected.
-- **Export as WAV**: **Esporta…** (toolbar or **File › Esporta…**, ⌘E) asks for a folder and writes
+- **Export as WAV**: **Export…** (toolbar or **File › Export…**, ⌘E) asks for a folder and writes
   only the selected clips, as `<source name> <n>.wav` — `footsteps 1.wav`, `footsteps 2.wav`, and so
   on — then shows the folder in the Finder. Sample rate, channel count and bit depth are taken from
   the source file, so a 16-bit 48 kHz mono recording comes back out as 16-bit 48 kHz mono. The
   original file is never touched.
+- **Two languages**: the interface is in English and Italian, following the system language.
 
 ## Requirements
 
@@ -88,9 +85,9 @@ running.
    peak value (`vDSP_maxmgv`) per 10 ms window, taken from whichever channel is loudest, so a sound
    that only appears on one side is never treated as silence.
 2. `nonSilentRanges` in [SilenceDetector.swift](AudioSplitter/SilenceDetector.swift) decides where
-   the cuts fall. A stretch is silence when its level stays under **Soglia** for at least
-   **Silenzio minimo**. Everything between two silences is a clip, and anything shorter than
-   **Clip minima** is dropped. Each clip then grows by **Margine** on both sides so it doesn't start
+   the cuts fall. A stretch is silence when its level stays under **Threshold** for at least
+   **Minimum Silence**. Everything between two silences is a clip, and anything shorter than
+   **Minimum Clip** is dropped. Each clip then grows by **Margin** on both sides so it doesn't start
    and end on an abrupt edge.
 3. The margin never lets two clips overlap: it is capped at half the silence next to it, whatever
    value the slider is set to.
@@ -104,12 +101,12 @@ running.
 7. `export` in [SplitterModel.swift](AudioSplitter/SplitterModel.swift) writes each selected slice
    with `AVAudioFile` as integer linear PCM, at the sample rate and channel count of the source.
 
-| Control | Meaning | Default | Range | What it does |
-|---|---|---|---|---|
-| Soglia | Threshold | −40 dB | −70 to −10 dB | The level under which sound counts as silence. Raise it for quiet recordings, lower it for noisy ones. |
-| Silenzio minimo | Minimum silence | 0.50 s | 0.05 to 2 s | How long a quiet stretch has to last before it splits the file. Shorter values cut more. |
-| Margine | Margin | 0.10 s | 0 to 0.5 s | Silence kept at both ends of every clip. |
-| Clip minima | Minimum clip | 0.15 s | 0.02 to 2 s | Clips shorter than this are thrown away — it removes clicks and breaths. |
+| Control | Default | Range | What it does |
+|---|---|---|---|
+| Threshold | −40 dB | −70 to −10 dB | The level under which sound counts as silence. Raise it for quiet recordings, lower it for noisy ones. |
+| Minimum Silence | 0.50 s | 0.05 to 2 s | How long a quiet stretch has to last before it splits the file. Shorter values cut more. |
+| Margin | 0.10 s | 0 to 0.5 s | Silence kept at both ends of every clip. |
+| Minimum Clip | 0.15 s | 0.02 to 2 s | Clips shorter than this are thrown away — it removes clicks and breaths. |
 
 ## Known limitations
 
@@ -120,7 +117,6 @@ running.
 - One file at a time: dropping several files opens only the first.
 - When a slider changes the number of clips, a deselection stays with the position in the list, not
   with the sound: the third clip stays deselected even if it is now a different stretch of audio.
-- The interface is in Italian only.
 
 ## Structure
 
@@ -131,6 +127,7 @@ AudioSplitter/
   SilenceDetector.swift    where the cuts fall — pure logic, no AVFoundation
   Player.swift             playback of one clip from the in-memory buffer
   AppIcon.icon             icon (Icon Composer document)
+  Localizable.xcstrings    English translations (the source strings are Italian)
 check/                     checks for the split logic
 scripts/                   development build
 docs/                      icon and screenshot for this README
