@@ -53,7 +53,7 @@ AVFoundation, the envelope analysis is Accelerate. No ffmpeg.
 ## Installation
 
 ```bash
-git clone https://gitlab.com/giuliomaffei90/audio-splitter.git
+git clone https://github.com/giuliomaffei90/audio-splitter.git
 cd audio-splitter
 ./build.sh
 open dist/AudioSplitter.app
